@@ -41,6 +41,10 @@
 (setq split-heigh-threshold nil)
 (setq split-wdith-threshold 0)
 
+;; Unset extra backspace (from qmk setup).
+;;global-set-key [(control ?h)] nil)
+(global-unset-key [(control ?h)])
+
 ;; Move windows directionally.
 (global-set-key (kbd "C-x <up>") 'windmove-up)
 (global-set-key (kbd "C-x <down>") 'windmove-down)
