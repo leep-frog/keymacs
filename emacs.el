@@ -41,10 +41,6 @@
 (setq split-heigh-threshold nil)
 (setq split-wdith-threshold 0)
 
-;; Unset extra backspace (from qmk setup).
-;;global-set-key [(control ?h)] nil)
-(global-unset-key [(control ?h)])
-
 ;; Move windows directionally.
 (global-set-key (kbd "C-x <up>") 'windmove-up)
 (global-set-key (kbd "C-x <down>") 'windmove-down)
@@ -96,7 +92,11 @@
 (global-set-key (kbd "C-h") 'delete-backward-char)
 ;; This allows backward kill word to work in chrome, emacs, and regular terminal.
 ;; "?h" is the code sent by the backspace character, btw.
-(global-set-key [(control meta ?h)] 'backward-kill-word)
+;;(global-set-key [(control meta ?h)] 'backward-kill-word)
+(global-set-key [(control ?h)] 'backward-kill-word)
+
+;;global-set-key [(control ?h)] nil)
+(global-unset-key [(control meta h)])
 
 ;; Line jump.
 (global-set-key (kbd "M-l") 'goto-line)
