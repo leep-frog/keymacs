@@ -48,7 +48,7 @@
 (global-set-key (kbd "C-x <right>") 'windmove-right)
 
 ;; Scroll smoothly.
-(setq scroll-step
+(setq scroll-step           1
       scroll-conservatively 10000)
 ;; Scroll window up/down by one line.
 (global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
