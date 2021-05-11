@@ -90,7 +90,9 @@
 
 ;; C-h as backspace.
 (global-set-key (kbd "C-h") 'delete-backward-char)
-(global-set-key (kbd "M-h") 'backward-kill-word)
+;; This allows backward kill word to work in chrome, emacs, and regular terminal.
+;; "?h" is the code sent by the backspace character, btw.
+(global-set-key [(control meta ?h)] 'backward-kill-word)
 
 ;; Line jump.
 (global-set-key (kbd "M-l") 'goto-line)
@@ -102,7 +104,7 @@
 (global-set-key (kbd "M-v") 'split-window-vertically)
 
 ;; M-v splits screen horizontally.
-(global-set-key (kbd "M-h") 'split-window-horizontally)
+(global-set-key (kbd "M-z") 'split-window-horizontally)
 
 ;; Delete the current window.
 (global-set-key (kbd "C-q") 'delete-window)
