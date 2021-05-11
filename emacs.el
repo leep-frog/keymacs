@@ -96,7 +96,8 @@
 (global-set-key [(control ?h)] 'backward-kill-word)
 
 ;;global-set-key [(control ?h)] nil)
-(global-unset-key [(control meta h)])
+;;(global-unset-key [(control meta h)])
+(global-unset-key (kbd "C-M-h"))
 
 ;; Line jump.
 (global-set-key (kbd "M-l") 'goto-line)
