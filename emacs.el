@@ -90,10 +90,13 @@
 
 ;; C-h as backspace.
 (global-set-key (kbd "C-h") 'delete-backward-char)
+;; Backspace an entire word
 ;; This allows backward kill word to work in chrome, emacs, and regular terminal.
 ;; "?h" is the code sent by the backspace character, btw.
-;;(global-set-key [(control meta ?h)] 'backward-kill-word)
+;; Ctrl-backspace and ctrl-h are the same in emacs. QMK runs Ctrl-backspace and Ctrl-Alt-H,
+;; so we make one of those a no-op and the other backward-kill-word.
 (global-set-key [(control ?h)] 'backward-kill-word)
+(global-set-key [(control meta ?h)] (lambda () (interactive) ()))
 
 ;;global-set-key [(control ?h)] nil)
 ;;(global-unset-key [(control meta h)])
