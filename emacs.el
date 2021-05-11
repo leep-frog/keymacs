@@ -115,9 +115,8 @@
 (global-set-key (kbd "M-c") 'save-buffers-kill-terminal)
 
 ;; Jump between windows.
-(global-set-key (kbd "<C-tab>") 'other-window)
-(global-set-key (kbd "<C-S-tab>") (lambda () (interactive) (other-window -1)))
-(global-set-key (kbd "<C-S-iso-lefttab>") (lambda () (interactive) (other-window -1)))
+(global-set-key (kbd "<C-next>") 'other-window)
+(global-set-key (kbd "<C-prior>") (lambda () (interactive) (other-window -1)))
 
 ;; SHORTCUTS FOR NON-QMK KEYBOARDS.
 
