@@ -54,6 +54,8 @@
 (global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
 (global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
 
+;; (server-start)
+
 ;; COLORS.
 
 ;; TODO: colors based on background.
@@ -133,3 +135,38 @@
 (global-set-key (kbd "C-v") 
     (lambda () (interactive) (next-line 10)))
 
+;; MACROS.
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Basic-Keyboard-Macro.html
+
+;; Start recording macro.
+(global-set-key (kbd "M-r") 'kmacro-start-macro-or-insert-counter)
+;; End recording or execute last macro.
+(global-set-key (kbd "M-e") 'kmacro-end-or-call-macro)
+
+;; CACHED TEXT BLOCKS.
+
+;; Use this format to bind text to a single command.
+;; (global-set-key (kbd "M-k") (lambda () (interactive) (insert "hello\nthere")))
+
+;; Use this format to bind text via "M-x alias-name <RET>".
+;; (defalias 'heyo (lambda () (interactive) (insert "hello\nthere")))
+
+;; New test function.
+;; TODO add arguments for this.
+(defalias 'heyo (lambda () (interactive) (insert 
+"
+func TestABC(t *testing.T) {
+  for _, test := range []struct {
+    name string
+  }{
+    {
+      name: \"test\",
+    },
+  } {
+    t.Run(test.name, func(t *testing.T) {
+
+    })
+  }
+}
+"
+))
