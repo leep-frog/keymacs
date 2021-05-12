@@ -98,10 +98,6 @@
 (global-set-key [(control ?h)] 'backward-kill-word)
 (global-set-key [(control meta ?h)] (lambda () (interactive) ()))
 
-;;global-set-key [(control ?h)] nil)
-;;(global-unset-key [(control meta h)])
-(global-unset-key (kbd "C-M-h"))
-
 ;; Line jump.
 (global-set-key (kbd "M-l") 'goto-line)
 (global-set-key (kbd "C-x C-l") 'goto-line)
