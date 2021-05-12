@@ -104,21 +104,25 @@
 
 ;; Line jump.
 (global-set-key (kbd "M-l") 'goto-line)
+(global-set-key (kbd "C-x C-l") 'goto-line)
 
 ;; C-j sets mark for highlighting.
 (global-set-key (kbd "C-j") 'set-mark-command)
 
 ;; M-v splits screen vertically.
 (global-set-key (kbd "M-v") 'split-window-vertically)
+(global-set-key (kbd "C-x C-v") 'split-window-vertically)
 
 ;; M-v splits screen horizontally.
 (global-set-key (kbd "M-z") 'split-window-horizontally)
+(global-set-key (kbd "C-x C-h") 'split-window-vertically)
 
 ;; Delete the current window.
 (global-set-key (kbd "C-q") 'delete-window)
 
 ;; Switch file.
 (global-set-key (kbd "C-t") 'find-file)
+(global-set-key (kbd "C-x C-f") 'split-window-vertically)
 
 ;; Save buffer. TODO: should this save all buffers?
 (global-set-key (kbd "M-s") 'save-buffer)
@@ -135,6 +139,8 @@
 (global-set-key (kbd "C-u") (lambda () (interactive) (other-window -1)))
 
 ;; Jump to top of file. (qmk uses ctrl+home/end)
+(global-set-key (kbd "C-x C-p") 'beginning-of-buffer)
+(global-set-key (kbd "C-x C-n") 'end-of-buffer)
 (global-set-key (kbd "M-p") 'beginning-of-buffer)
 (global-set-key (kbd "M-n") 'end-of-buffer)
 
