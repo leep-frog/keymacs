@@ -115,7 +115,6 @@
 
 ;; Switch file.
 (global-set-key (kbd "C-t") 'find-file)
-(global-set-key (kbd "C-x C-f") 'split-window-vertically)
 
 ;; Save buffer. TODO: should this save all buffers?
 (global-set-key (kbd "M-s") 'save-buffer)
