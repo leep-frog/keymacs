@@ -1,7 +1,11 @@
 ;; File containing emacs preferences.
 
+;; The following should be added to your emacs init file (~/.emacs):
+;; (add-to-list 'load-path "path/to/keymacs")
+;; (load "keymacs")
+
 ;; Load things specific to qmk vs basic keyboard
-(if (> (length (getenv "EMACS_QMK")) 0) (load "qmk.el") (load "basic.el"))
+(if (> (length (getenv "EMACS_QMK")) 0) (load "qmk") (load "basic"))
 
 ;; SETTINGS.
 
