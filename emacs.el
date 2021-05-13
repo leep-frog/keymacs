@@ -1,5 +1,8 @@
 ;; File containing emacs preferences.
 
+;; Load things specific to qmk vs basic keyboard
+(if (> (length (getenv "EMACS_QMK")) 0) (load "qmk.el") (load "basic.el"))
+
 ;; SETTINGS.
 
 ;; Ignore case when changing files.
@@ -88,16 +91,6 @@
 
 ;; KEYBOARD CHANGES.
 
-;; C-h as backspace.
-(global-set-key (kbd "C-h") 'delete-backward-char)
-;; Backspace an entire word
-;; This allows backward kill word to work in chrome, emacs, and regular terminal.
-;; "?h" is the code sent by the backspace character, btw.
-;; Ctrl-backspace and ctrl-h are the same in emacs. QMK runs Ctrl-backspace and Ctrl-Alt-H,
-;; so we make one of those a no-op and the other backward-kill-word.
-(global-set-key [(control ?h)] 'backward-kill-word)
-(global-set-key [(control meta ?h)] (lambda () (interactive) ()))
-
 ;; Line jump.
 (global-set-key (kbd "M-l") 'goto-line)
 (global-set-key (kbd "C-x C-l") 'goto-line)
@@ -111,7 +104,7 @@
 
 ;; M-v splits screen horizontally.
 (global-set-key (kbd "M-z") 'split-window-horizontally)
-(global-set-key (kbd "C-x C-h") 'split-window-vertically)
+(global-set-key (kbd "C-x C-h") 'split-window-horizontally)
 
 ;; Delete the current window.
 (global-set-key (kbd "C-q") 'delete-window)
@@ -123,10 +116,6 @@
 ;; Save buffer. TODO: should this save all buffers?
 (global-set-key (kbd "M-s") 'save-buffer)
 (global-set-key (kbd "M-c") 'save-buffers-kill-terminal)
-
-;; Jump between windows.
-(global-set-key (kbd "<C-next>") 'other-window)
-(global-set-key (kbd "<C-prior>") (lambda () (interactive) (other-window -1)))
 
 ;; SHORTCUTS FOR NON-QMK KEYBOARDS.
 
@@ -164,7 +153,7 @@
 
 ;; New test function.
 ;; TODO add arguments for this.
-(defalias 'heyo (lambda () (interactive) (insert 
+(defalias 'gt (lambda () (interactive) (insert 
 "
 func TestABC(t *testing.T) {
   for _, test := range []struct {
