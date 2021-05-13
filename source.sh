@@ -1,4 +1,12 @@
 # Script to enable helper functions for setting keyboard.
 
-alias eq="export EMACS_QMK=1"
-alias es="unset EMACS_QMK"
+function eq {
+  if ["$EMACS_QMK"]
+  then
+    echo Unsetting EMACS_QMK
+    unset EMACS_QMK
+  else
+    echo Setting EMACS_QMK
+    export EMACS_QMK=1
+  fi
+}
