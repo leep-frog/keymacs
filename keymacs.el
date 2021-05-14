@@ -107,7 +107,7 @@
 ;; n files.
 (global-set-key (kbd "C-x C-f") (lambda () (interactive)
   (setq b (buffer-name))
-  (setq nf (read-file-name "Find file: "))
+  (setq nf (read-file-name "Open file: "))
   (kill-buffer b)
   (find-file nf)
 ))
