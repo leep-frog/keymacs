@@ -12,6 +12,9 @@
 ;; Ignore case when changing files.
 (setq read-file-name-completion-ignore-case t)
 
+;; Empty scratch buffer.
+(setq initial-scratch-message nil)
+
 ;; Show line numbers.
 (global-linum-mode t)
 
