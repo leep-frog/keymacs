@@ -126,8 +126,11 @@
 (global-set-key (kbd "M-z") 'split-window-horizontally)
 (global-set-key (kbd "C-x C-h") 'split-window-horizontally)
 
-;; Delete the current window.
-(global-set-key (kbd "C-q") 'delete-window)
+;; Save buffer and delete the current window.
+(global-set-key (kbd "C-q") (lambda () (interactive)
+  (save-buffer (buffer-name)))
+  (delete-window)
+))
 
 ;; Save buffer. TODO: should this save all buffers?
 (global-set-key (kbd "M-s") 'save-buffer)
