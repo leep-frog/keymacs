@@ -15,6 +15,9 @@
 ;; Show line numbers.
 (global-linum-mode t)
 
+;; Automatically keep files up to date when other files change them.
+(global-auto-revert-mode t)
+
 ;; Show column number at the bottom of the screen.
 (setq column-number-mode t)
 
@@ -95,6 +98,21 @@
 
 ;; KEYBOARD CHANGES.
 
+;; Switch file.
+(global-set-key (kbd "C-t") 'find-file)
+;; Don't like keeping other files open so just explicitly
+;; close them and then re-open. Needed for emacs daemon
+;; so it doesn't leave some files open forever.
+;; TODO: maybe make this eventually keep a stack of at most
+;; n files.
+(global-set-key (kbd "C-x C-f") (lambda () (interactive)
+  (setq b (buffer-name))
+  (setq nf (read-file-name "Find file: "))
+  (kill-buffer b)
+  (find-file nf)
+))
+
+
 ;; Line jump.
 (global-set-key (kbd "M-l") 'goto-line)
 (global-set-key (kbd "C-x C-l") 'goto-line)
@@ -112,9 +130,6 @@
 
 ;; Delete the current window.
 (global-set-key (kbd "C-q") 'delete-window)
-
-;; Switch file.
-(global-set-key (kbd "C-t") 'find-file)
 
 ;; Save buffer. TODO: should this save all buffers?
 (global-set-key (kbd "M-s") 'save-buffer)
