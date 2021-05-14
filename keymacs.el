@@ -100,18 +100,10 @@
 
 ;; Switch file.
 (global-set-key (kbd "C-t") 'find-file)
-;; Don't like keeping other files open so just explicitly
-;; close them and then re-open. Needed for emacs daemon
-;; so it doesn't leave some files open forever.
-;; TODO: maybe make this eventually keep a stack of at most
-;; n files.
 (global-set-key (kbd "C-x C-f") (lambda () (interactive)
-  (setq b (buffer-name))
-  (setq nf (read-file-name "Open file: "))
-  (kill-buffer b)
-  (find-file nf)
+  (safe-buffer)
+  (find-file)
 ))
-
 
 ;; Line jump.
 (global-set-key (kbd "M-l") 'goto-line)
