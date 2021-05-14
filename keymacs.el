@@ -100,9 +100,12 @@
 
 ;; Switch file.
 (global-set-key (kbd "C-t") 'find-file)
+;; Switch to file, but save the current file before doing so.
 (global-set-key (kbd "C-x C-f") (lambda () (interactive)
-  (safe-buffer)
-  (find-file)
+  (setq b (buffer-name))
+  (setq nf (read-file-name "Open file: "))
+  (save-buffer b)
+  (find-file nf)
 ))
 
 ;; Line jump.
