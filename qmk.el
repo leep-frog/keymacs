@@ -12,3 +12,9 @@
 ;; QMK uses PageUp and PageDown so switching tabs is equivalent in Chrome and emacs.
 (global-set-key (kbd "<C-next>") 'other-window)
 (global-set-key (kbd "<C-prior>") (lambda () (interactive) (other-window -1)))
+
+;; Jump 10 lines with page up and page down (C-v and C-l on qmk keyboard).
+(global-set-key (kbd "<prior>") 
+    (lambda () (interactive) (previous-line 10)))
+(global-set-key (kbd "<next>") 
+    (lambda () (interactive) (next-line 10)))
