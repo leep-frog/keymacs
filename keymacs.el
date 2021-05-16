@@ -102,8 +102,13 @@
 ;; KEYBOARD CHANGES.
 
 ;; Switch file.
-(global-set-key (kbd "C-t") 'find-file)
 ;; Switch to file, but save the current file before doing so.
+(global-set-key (kbd "C-t") (lambda () (interactive)
+  (setq b (buffer-name))
+  (setq nf (read-file-name "Open file: "))
+  (save-buffer b)
+  (find-file nf)
+))
 (global-set-key (kbd "C-x C-f") (lambda () (interactive)
   (setq b (buffer-name))
   (setq nf (read-file-name "Open file: "))
@@ -133,7 +138,6 @@
 ))
 
 ;; Save buffer. TODO: should this save all buffers?
-(global-set-key (kbd "M-s") 'save-buffer)
 (global-set-key (kbd "M-c") 'save-buffers-kill-terminal)
 
 ;; SHORTCUTS FOR NON-QMK KEYBOARDS.
@@ -153,6 +157,9 @@
     (lambda () (interactive) (previous-line 10)))
 (global-set-key (kbd "C-v") 
     (lambda () (interactive) (next-line 10)))
+
+;; Find and replace.
+(global-set-key (kbd "M-s") 'query-replace)
 
 ;; MACROS.
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Basic-Keyboard-Macro.html
