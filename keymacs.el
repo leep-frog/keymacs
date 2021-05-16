@@ -128,7 +128,7 @@
 
 ;; Save buffer and delete the current window.
 (global-set-key (kbd "C-q") (lambda () (interactive)
-  (save-buffer (buffer-name)))
+  (save-buffer (buffer-name))
   (delete-window)
 ))
 
