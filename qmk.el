@@ -18,3 +18,6 @@
     (lambda () (interactive) (previous-line 10)))
 (global-set-key (kbd "<next>") 
     (lambda () (interactive) (next-line 10)))
+
+;; Switch search to C-f.
+(global-set-key (kbd "C-f") 'isearch-forward)
