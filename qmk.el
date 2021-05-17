@@ -20,4 +20,4 @@
     (lambda () (interactive) (next-line 10)))
 
 ;; Switch search to C-f.
-(global-set-key (kbd "C-f") 'isearch-forward)
+(global-set-key (kbd "C-f") 'isearch-repeat-forward)
