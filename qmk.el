@@ -20,4 +20,6 @@
     (lambda () (interactive) (next-line 10)))
 
 ;; Switch search to C-f.
-(global-set-key (kbd "C-f") 'isearch-repeat-forward)
+(global-set-key (kbd "C-f") 'isearch-forward)
+;; Switch C-f to find next occurrence when in search mode.
+(define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
