@@ -99,6 +99,10 @@
 (set-face-foreground 'minibuffer-prompt "color-51")
 (set-face-attribute 'minibuffer-prompt nil :weight 'bold)
 
+;; Line numbers.
+set-face-foreground 'linum "#FF")
+set-face-background 'linum "#00")
+
 ;; KEYBOARD CHANGES.
 
 ;; Switch file.
