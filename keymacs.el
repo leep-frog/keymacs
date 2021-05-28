@@ -7,6 +7,10 @@
 ;; Load things specific to qmk vs basic keyboard
 (if (> (length (getenv "EMACS_QMK")) 0) (load "qmk") (load "basic"))
 
+;; Switch between qmk and basic
+(defalias 'kq (lambda () (interactive) (load "qmk")))
+(defalias 'kb (lambda () (interactive) (load "basic")))
+
 ;; SETTINGS.
 
 ;; Ignore case when changing files.
