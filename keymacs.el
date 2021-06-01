@@ -104,8 +104,8 @@
 (set-face-attribute 'minibuffer-prompt nil :weight 'bold)
 
 ;; Line numbers.
-set-face-foreground 'linum "#FF")
-set-face-background 'linum "#00")
+(set-face-foreground 'linum "brightgreen")
+(set-face-background 'linum "color-238")
 
 ;; KEYBOARD CHANGES.
 
