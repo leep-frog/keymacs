@@ -10,6 +10,7 @@
 ;; Switch between qmk and basic
 (defalias 'kq (lambda () (interactive) (load "qmk")))
 (defalias 'kb (lambda () (interactive) (load "basic")))
+(defalias 'keyload (lambda () (interactive) (load "keymacs")))
 
 ;; SETTINGS.
 
@@ -184,6 +185,16 @@
 
 ;; MACROS.
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Basic-Keyboard-Macro.html
+
+;; Create go map.
+;; TODO: Change behavior depending on file type.
+(global-set-key (kbd "M-g M-m") (lambda () (interactive)
+  (setq input (read-string "List of map parts: "))
+  (setq parts (split-string input))
+  (setq value (nth (1- (length parts)) parts))
+  (setq parts (butlast parts 1))
+  (insert (concat "map[" (mapconcat 'identity parts "]map[")) "]" value "{")
+))
 
 ;; Start recording macro.
 ;;(global-set-key (kbd "M-r") 'kmacro-start-macro-or-insert-counter)
