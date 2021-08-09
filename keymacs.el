@@ -111,18 +111,16 @@
 
 ;; Switch file.
 ;; Switch to file, but save the current file before doing so.
-(global-set-key (kbd "C-t") (lambda () (interactive)
+(defun open-file (allow-new) (progn
   (setq b (buffer-name))
   (setq nf (read-file-name "Open file: "))
-  (save-buffer b)
-  (find-file nf)
+  (if (or allow-new (file-exists-p nf)) (progn (find-file nf) (save-buffer b) (find-file nf)) (error "File does not exist. Use C-t to create a new file"))
 ))
-(global-set-key (kbd "C-x C-f") (lambda () (interactive)
-  (setq b (buffer-name))
-  (setq nf (read-file-name "Open file: "))
-  (save-buffer b)
-  (find-file nf)
-))
+
+;; Open an existing file
+(global-set-key (kbd "C-x C-f") (lambda () (interactive) (open-file nil)))
+;; Open a new or existing file.
+(global-set-key (kbd "C-t") (lambda () (interactive) (open-file nil)))
 
 ;; Line jump.
 (global-set-key (kbd "M-l") 'goto-line)
@@ -173,7 +171,8 @@
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Basic-Keyboard-Macro.html
 
 ;; Start recording macro.
-(global-set-key (kbd "M-r") 'kmacro-start-macro-or-insert-counter)
+;;(global-set-key (kbd "M-r") 'kmacro-start-macro-or-insert-counter)
+(global-set-key (kbd "M-r") 'kmacro-start-macro)
 ;; End recording or execute last macro.
 (global-set-key (kbd "M-e") 'kmacro-end-or-call-macro)
 
