@@ -136,7 +136,7 @@
 ;; Open an existing file
 (global-set-key (kbd "C-x C-f") (lambda () (interactive) (open-file nil)))
 ;; Open a new or existing file.
-(global-set-key (kbd "C-t") (lambda () (interactive) (open-file nil)))
+(global-set-key (kbd "C-t") (lambda () (interactive) (open-file t)))
 
 ;; Line jump.
 (global-set-key (kbd "M-l") 'goto-line)
