@@ -8,7 +8,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Backspace character as backspace (not backspace word).
-(global-set-key [(control ?h)] 'delete-backword-char)
+(global-set-key [(control ?h)] 'delete-backward-char)
 
 ;; un-swap c-f and c-s.
 (global-set-key (kbd "C-f") 'forward-char)
