@@ -7,8 +7,8 @@
 ;; UNDO CHANGES FROM QMK ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; ctrl+h backspace.
-(global-set-key [(control ?h)] 'backward-kill-word)
+;; Backspace character as backspace (not backspace word).
+(global-set-key [(control ?h)] 'delete-backword-char)
 
 ;; un-swap c-f and c-s.
 (global-set-key (kbd "C-f") 'forward-char)
