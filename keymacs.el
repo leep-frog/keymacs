@@ -173,6 +173,13 @@
 (global-set-key (kbd "C-x C-n") 'end-of-buffer)
 (global-set-key (kbd "M-p") 'beginning-of-buffer)
 (global-set-key (kbd "M-n") 'end-of-buffer)
+;; Needed for qmk shift layer.
+(global-set-key (kbd "M-P") 'beginning-of-buffer)
+(global-set-key (kbd "M-N") 'end-of-buffer)
+
+;; Needed for qmk shift layer.
+(global-set-key (kbd "C-A") 'beginning-of-line)
+(global-set-key (kbd "C-E") 'end-of-line)
 
 ;; Jump lines in either direction.
 (global-set-key (kbd "C-l") 
