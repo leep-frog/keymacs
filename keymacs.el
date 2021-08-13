@@ -68,9 +68,6 @@
 ;; Scroll smoothly.
 (setq scroll-step           1
       scroll-conservatively 10000)
-;; Scroll window up/down by one line.
-(global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
-(global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
 
 ;; (server-start)
 
@@ -185,6 +182,11 @@
 (global-set-key (kbd "C-l") 
     (lambda () (interactive) (previous-line 10)))
 (global-set-key (kbd "C-v") 
+    (lambda () (interactive) (next-line 10)))
+;; Needed for qmk shift layer.
+(global-set-key (kbd "C-L") 
+    (lambda () (interactive) (previous-line 10)))
+(global-set-key (kbd "C-V") 
     (lambda () (interactive) (next-line 10)))
 
 ;; Find and replace.
