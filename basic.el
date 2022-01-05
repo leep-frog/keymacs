@@ -16,4 +16,4 @@
 ;; Switch C-f to find next occurrence when in search mode.
 (define-key isearch-mode-map (kbd "C-s") 'isearch-repeat-forward)
 (define-key isearch-mode-map (kbd "C-f") nil)
-(if (file-exists-p (getenv "EMACS_QMK")) (delete-file (getenv "EMACS_QMK")))
+(if (and (getenv "EMACS_QMK") (file-exists-p (getenv "EMACS_QMK"))) (delete-file (getenv "EMACS_QMK")))

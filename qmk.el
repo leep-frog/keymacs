@@ -23,4 +23,4 @@
 (global-set-key (kbd "C-f") 'isearch-forward)
 ;; Switch C-f to find next occurrence when in search mode.
 (define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
-(append-to-file "" "" (getenv "EMACS_QMK"))
+(if (getenv "EMACS_QMK") (append-to-file "" nil (getenv "EMACS_QMK")))
