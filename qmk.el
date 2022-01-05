@@ -23,3 +23,4 @@
 (global-set-key (kbd "C-f") 'isearch-forward)
 ;; Switch C-f to find next occurrence when in search mode.
 (define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
+(setenv "EMACS_QMK" "1")

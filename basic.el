@@ -16,3 +16,4 @@
 ;; Switch C-f to find next occurrence when in search mode.
 (define-key isearch-mode-map (kbd "C-s") 'isearch-repeat-forward)
 (define-key isearch-mode-map (kbd "C-f") nil)
+(setenv "EMACS_QMK" nil)
