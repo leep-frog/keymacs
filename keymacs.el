@@ -5,7 +5,8 @@
 ;; (load "keymacs")
 
 ;; Load things specific to qmk vs basic keyboard
-(if (> (length (getenv "EMACS_QMK")) 0) (load "qmk") (load "basic"))
+;; (if (> (length (getenv "EMACS_QMK")) 0) (load "qmk") (load "basic"))
+(if (file-exists-p (getenv "EMACS_QMK")) (load "qmk") (load "basic"))
 
 ;; Switch between qmk and basic
 (defalias 'kq (lambda () (interactive) (load "qmk")))
