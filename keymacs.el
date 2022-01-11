@@ -111,7 +111,7 @@
 ;; Use different colors of mode line for the active and inactive windows:
 (custom-set-faces
  '(mode-line ((t (:background "color-28" :foreground "white"))))
- '(mode-line-inactive ((t (:background nil)))))
+ '(mode-line-inactive ((t (:background "white" :foreground "color-232")))))
 
 ;; Highlight the current line where the point is in active window:
 (global-hl-line-mode 1)
