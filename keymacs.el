@@ -8,8 +8,8 @@
 (if (and (getenv "EMACS_QMK") (file-exists-p (getenv "EMACS_QMK"))) (load "qmk") (load "basic"))
 
 ;; Switch between qmk and basic
-(defalias 'kq (lambda () (interactive) (load "qmk")))
-(defalias 'kb (lambda () (interactive) (load "basic")))
+(defalias 'eq (lambda () (interactive) (load "qmk")))
+(defalias 'eb (lambda () (interactive) (load "basic")))
 (defalias 'keyload (lambda () (interactive) (load "keymacs")))
 
 ;; SETTINGS.
