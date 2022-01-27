@@ -104,6 +104,7 @@
 ;; Line numbers.
 (set-face-foreground 'linum "color-87")
 (set-face-background 'linum "color-238")
+(setq linum-format " %d ")
 
 ;; Comments
 (set-face-foreground 'font-lock-comment-face "brightgreen")
