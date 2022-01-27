@@ -105,6 +105,9 @@
 (set-face-foreground 'linum "brightgreen")
 (set-face-background 'linum "color-238")
 
+;; Comments
+(set-face-foreground 'font-lock-comment-face "color-196")
+
 ;; ACTIVE WINDOW
 ;; Section populated from https://emacs.stackexchange.com/questions/24630/is-there-a-way-to-change-color-of-active-windows-fringe
 
