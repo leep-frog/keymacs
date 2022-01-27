@@ -86,15 +86,14 @@
 (set-face-attribute 'font-lock-function-name-face nil :bold 'bold)
 
 ;; String literals.
-(set-face-foreground 'font-lock-string-face "color-171")
-(set-face-attribute 'font-lock-string-face nil :bold 'bold)
+(set-face-foreground 'font-lock-string-face "color-208")
 
 ;; Types.
 (set-face-foreground 'font-lock-type-face "color-82")
 (set-face-attribute 'font-lock-type-face nil :bold 'bold)
 
 ;; Keywords.
-(set-face-foreground 'font-lock-keyword-face "color-99")
+(set-face-foreground 'font-lock-keyword-face "color-177")
 (set-face-attribute 'font-lock-keyword-face nil :bold 'bold)
 
 ;; Mini prompt at bottom (like when changing file).
