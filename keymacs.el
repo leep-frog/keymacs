@@ -104,7 +104,23 @@
 ;; Line numbers.
 (set-face-foreground 'linum "color-87")
 (set-face-background 'linum "color-238")
-(setq linum-format " %d ")
+
+;; Format of line numbers. Copied and slightly modified from
+;; https://www.emacswiki.org/emacs/LineNumbers
+(unless window-system
+  (add-hook 'linum-before-numbering-hook
+	    (lambda ()
+	      (setq-local linum-format-fmt
+			  (let ((w (length (number-to-string
+					    (count-lines (point-min) (point-max))))))
+			    (concat " %" (number-to-string w) "d "))))))
+
+(defun linum-format-func (line)
+  (concat
+   (propertize (format linum-format-fmt line) 'face 'linum)))
+
+(unless window-system
+  (setq linum-format 'linum-format-func))
 
 ;; Comments
 (set-face-foreground 'font-lock-comment-face "brightgreen")
