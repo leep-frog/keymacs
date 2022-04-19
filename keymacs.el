@@ -1,9 +1,5 @@
 ;; File containing emacs preferences.
 
-;; The following should be added to your emacs init file (~/.emacs):
-;; (add-to-list 'load-path "path/to/keymacs")
-;; (load "keymacs")
-
 ;; Load things specific to qmk vs basic keyboard
 (if (and (getenv "EMACS_QMK") (file-exists-p (getenv "EMACS_QMK"))) (load "qmk") (load "basic"))
 
@@ -177,8 +173,6 @@
 
 ;; Save buffer. TODO: should this save all buffers?
 (global-set-key (kbd "M-c") 'save-buffers-kill-terminal)
-
-;; SHORTCUTS FOR NON-QMK KEYBOARDS.
 
 ;; Jump between windows.
 (global-set-key (kbd "C-o") 'other-window)
