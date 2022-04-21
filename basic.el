@@ -16,7 +16,7 @@
 
 ;; Use different colors of mode line for the active and inactive windows:
 (custom-set-faces
- '(mode-line ((t (:background "color-27" :foreground "white"))))
+ '(mode-line ((t (:background "color-28" :foreground "white"))))
  '(mode-line-inactive ((t (:background "white" :foreground "color-232")))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
