@@ -153,6 +153,7 @@
 ;; M-v splits screen vertically.
 (global-set-key (kbd "M-v") 'split-window-vertically)
 (global-set-key (kbd "C-x C-v") 'split-window-vertically)
+(global-set-key (kbd "C-x <xterm-paste>") 'split-window-vertically)
 
 ;; M-v splits screen horizontally.
 (global-set-key (kbd "M-z") 'split-window-horizontally)
