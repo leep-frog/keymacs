@@ -1,7 +1,23 @@
 ;; File containing emacs preferences for basic keyboards.
 
+;;;;;;;;;;;;;;;;;;;;;;;;
+;; BASIC KEY BINDINGS ;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;; C-h as backspace.
 (global-set-key (kbd "C-h") 'delete-backward-char)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; STYLE SPECIFIC TO BASIC ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; ACTIVE WINDOW
+;; Section populapted from https://emacs.stackexchange.com/questions/24630/is-there-a-way-to-change-color-of-active-windows-fringe
+
+;; Use different colors of mode line for the active and inactive windows:
+(custom-set-faces
+ '(mode-line ((t (:background "color-27" :foreground "white"))))
+ '(mode-line-inactive ((t (:background "white" :foreground "color-232")))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; UNDO CHANGES FROM QMK ;;

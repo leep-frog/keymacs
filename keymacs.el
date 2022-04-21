@@ -121,13 +121,6 @@
 (set-face-foreground 'font-lock-comment-face "brightgreen")
 
 ;; ACTIVE WINDOW
-;; Section populated from https://emacs.stackexchange.com/questions/24630/is-there-a-way-to-change-color-of-active-windows-fringe
-
-;; Use different colors of mode line for the active and inactive windows:
-(custom-set-faces
- '(mode-line ((t (:background "color-28" :foreground "white"))))
- '(mode-line-inactive ((t (:background "white" :foreground "color-232")))))
-
 ;; Highlight the current line where the point is in active window:
 (global-hl-line-mode 1)
 ;; Set highlight color.

@@ -1,5 +1,21 @@
 ;; File containing emacs preferences specific to QMK keyboard.
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; STYLE SPECIFIC TO QMK ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; ACTIVE WINDOW
+;; Section populapted from https://emacs.stackexchange.com/questions/24630/is-there-a-way-to-change-color-of-active-windows-fringe
+
+;; Use different colors of mode line for the active and inactive windows:
+(custom-set-faces
+ '(mode-line ((t (:background "color-27" :foreground "white"))))
+ '(mode-line-inactive ((t (:background "white" :foreground "color-232")))))
+
+;;;;;;;;;;;;;;;;;;;;;;
+;; QMK KEY BINDINGS ;;
+;;;;;;;;;;;;;;;;;;;;;;
+
 ;; Backspace an entire word
 ;; This allows backward kill word to work in chrome, emacs, and regular terminal.
 ;; "?h" is the code sent by the backspace character, btw.
