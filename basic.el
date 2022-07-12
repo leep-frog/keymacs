@@ -3,6 +3,9 @@
 ;; Don't need to print a message because echo area says "Loading /.../qmk.el"
 ;; and the focused file banner color changes.
 
+;; Persist basic mode
+(if (getenv "EMACS_QMK") (write-region "" nil (getenv "EMACS_QMK")))
+
 ;; Set ctrl+x ctrl+t to enable qmk mode.
 (global-set-key (kbd "C-x C-t") (lambda () (interactive) (load "qmk")))
 
