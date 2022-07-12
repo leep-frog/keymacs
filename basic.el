@@ -1,4 +1,8 @@
 ;; File containing emacs preferences for basic keyboards.
+(message "Activating basic keyboard mode!")
+
+;; Set ctrl+x ctrl+t to enable qmk mode.
+(global-set-key (kbd "C-x C-t") (lambda () (interactive) (load "qmk")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; BASIC KEY BINDINGS ;;
