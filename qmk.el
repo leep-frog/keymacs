@@ -1,5 +1,8 @@
 ;; File containing emacs preferences specific to QMK keyboard.
 
+;; Don't need to print a message because echo area says "Loading /.../qmk.el"
+;; and the focused file banner color changes.
+
 ;; Set ctrl+x ctrl+t to enable basic mode.
 (global-set-key (kbd "C-x C-t") (lambda () (interactive) (load "basic")))
 
