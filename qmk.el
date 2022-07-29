@@ -7,7 +7,7 @@
 (if (and (getenv "EMACS_QMK") (file-exists-p (getenv "EMACS_QMK"))) (delete-file (getenv "EMACS_QMK")))
 
 ;; Set ctrl+x ctrl+t to enable basic mode.
-(global-set-key (kbd "C-x C-t") (lambda () (interactive) (load "basic")))
+(global-set-key (kbd "C-x C-k") (lambda () (interactive) (load "basic")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; STYLE SPECIFIC TO QMK ;;
